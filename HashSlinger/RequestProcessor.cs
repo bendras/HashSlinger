@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using Bendras.HashFile;
 using CommandLine;
 using HashSlingerCore;
 
@@ -46,6 +46,9 @@ namespace HashSlinger
                     fileHashMaker = new MD5Hasher();
                     break;
             }
+
+            fileHashMaker.HashBlockProcessed += fileHashMaker_HashBlockProcessed;
+
             List<String[]> inputFiles = new List<String[]>();
             if (commandLineOptions.Concatenate)
             {
@@ -74,7 +77,33 @@ namespace HashSlinger
             {
                 byte[] fileHash = fileHashMaker.ComputeFileHash(fileEntry, (int)commandLineOptions.BlockSize);
                 Console.WriteLine(commandLineOptions.HashAgorithm.ToUpper() + ": " + BitConverter.ToString(fileHash));
+
+                if (!string.IsNullOrWhiteSpace(commandLineOptions.AppendToHashFile))
+                {
+                    var settings = HashFile.OpenFile(commandLineOptions.AppendToHashFile);
+                    settings.Add(fileEntry[0], BitConverter.ToString(fileHash).Replace("-", string.Empty), commandLineOptions.HashAgorithm.ToUpper());
+                    settings.Save();
+                }
             }
+        }
+
+        void fileHashMaker_HashBlockProcessed(object sender, HasherEventArgs e)
+        {
+            int koef;
+            string format;
+            if (e.StreamBytes > 1000000)
+            {
+                koef = 1000000;
+                format = "{0} of {1}MB Progress";
+            }
+            else
+            {
+                koef = 1000;
+                format = "{0} of {1}KB Progress";
+            }
+
+
+            Console.Title = string.Format(format, e.BytesProcessed / koef, e.StreamBytes / koef);
         }
     }
 }

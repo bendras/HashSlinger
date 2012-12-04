@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Product Id="*" Name="Bendras.HashFile.SetupProject" Language="1033" Version="1.0.0.0" Manufacturer="Bendras" UpgradeCode="f2dd2623-f48b-4b4b-b38c-b15ed2a6bbb6">
+    <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+    <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." AllowSameVersionUpgrades="yes" />
+
+    <MediaTemplate />
+
+    <Feature Id="ProductFeature" Title="Bendras.HashFile" Level="1">
+      <ComponentGroupRef Id="ProductComponents" />
+    </Feature>
+  </Product>
+
+  <Fragment>
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="INSTALLFOLDER" Name="Bendras.HashFile" />
+      </Directory>
+    </Directory>
+  </Fragment>
+
+  <Fragment>
+    <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+      <!-- TODO: Remove the comments around this Component element and the ComponentRef below in order to add resources to this installer. -->
+      <Component Id="ProductComponent" Guid="{80EF0860-3776-4C4A-B75E-E4DF90418D70}">
+        <!-- TODO: Insert files, registry keys, and other resources here. -->
+        <File Id="HashSlinger.exe" Source="..\HashSlinger\bin\Debug\HashSlinger.exe" KeyPath="yes" Checksum="yes"/>
+        <File Id="Bendras.HashFile.dll" Source="..\HashSlinger\bin\Debug\Bendras.HashFile.dll" Checksum="yes"/>
+        <File Id="CommandLine.dll" Source="..\HashSlinger\bin\Debug\CommandLine.dll" Checksum="yes"/>
+        <File Id="HashSlingerCore.dll" Source="..\HashSlinger\bin\Debug\HashSlingerCore.dll" Checksum="yes"/>
+        <File Id="INIFileParser.dll" Source="..\HashSlinger\bin\Debug\INIFileParser.dll" Checksum="yes"/>
+      </Component>
+      <Component Id="MenuItem" Guid="{80EF0860-3876-4C4A-B75E-E4DF90417A70}">
+        <RegistryKey Root="HKCR" Key="*\shell\Create Hash File 2\command" Action="createAndRemoveOnUninstall">
+          <RegistryValue Type="string" Value="&quot;[INSTALLFOLDER]HashSlinger.exe&quot; -f &quot;hash2.ini&quot; %1" KeyPath="yes"/>
+        </RegistryKey>
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+</Wix>

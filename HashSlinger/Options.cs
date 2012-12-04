@@ -18,6 +18,9 @@ namespace HashSlinger
         [Option("c", "concat", Required = false, HelpText = "Treat all input files as a single stream. Default is false.")]
         public bool Concatenate = false;
 
+        [Option("f", "hashfile", Required = false, HelpText = "Append hash to a file.")]
+        public String AppendToHashFile = "";
+
         [HelpOption(HelpText = "Display this help text.")]
         public String ShowUsage()
         {

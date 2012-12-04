@@ -14,3 +14,8 @@
 /HashSlingerTests/TestResult.xml
 /Installer/HashSlinger.wixpdb
 /Installer/HashSlinger.wixobj
+
+/*/bin
+/*/obj
+/lib
+/packages

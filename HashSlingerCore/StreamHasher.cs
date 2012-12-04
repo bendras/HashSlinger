@@ -104,6 +104,7 @@ namespace HashSlingerCore
                     long fileLength = inputFile.Length;
                     int bytesRead = 0;
                     long totalBytesRead = 0;
+
                     while (totalBytesRead < fileLength)
                     {
                         bytesRead = inputFile.Read(readBuffer, 0, (int)blockSize);
@@ -140,7 +141,7 @@ namespace HashSlingerCore
             }
             // Report hash computed
             OnHashComputed(new HasherEventArgs(HasherEventReportType.Completed, null, null, null, null));
-            
+
         }
 
         protected bool cancelRequested = false;
@@ -151,6 +152,5 @@ namespace HashSlingerCore
         {
             this.cancelRequested = true;
         }
-
     }
 }

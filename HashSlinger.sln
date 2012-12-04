@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual C# Express 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HashSlingerCore", "HashSlingerCore\HashSlingerCore.csproj", "{B592EF41-5534-40B3-B7BA-07B59E0EDDF2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HashSlinger", "HashSlinger\HashSlinger.csproj", "{A390B0F2-755F-4EEA-8C1D-8F6F687B178B}"
@@ -8,6 +8,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HashSlingerTestRunner", "HashSlingerTestRunner\HashSlingerTestRunner.csproj", "{777E6522-614F-4C81-BE26-A6F54E9EFE5D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HashSlingerTests", "HashSlingerTests\HashSlingerTests.csproj", "{8639561A-2337-42DA-85E9-BC2FE6407ADA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bendras.HashFile", "Bendras.HashFile\Bendras.HashFile.csproj", "{90F14633-8AA5-4C96-ABB8-F080118D689A}"
+EndProject
+Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "Bendras.HashFile.SetupProject", "Bendras.HashFile.SetupProject\Bendras.HashFile.SetupProject.wixproj", "{DC28FFBE-4A31-445D-AA60-9020C0726092}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,6 +79,30 @@ Global
 		{8639561A-2337-42DA-85E9-BC2FE6407ADA}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{8639561A-2337-42DA-85E9-BC2FE6407ADA}.Release|x64.ActiveCfg = Release|Any CPU
 		{8639561A-2337-42DA-85E9-BC2FE6407ADA}.Release|x86.ActiveCfg = Release|Any CPU
+		{90F14633-8AA5-4C96-ABB8-F080118D689A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90F14633-8AA5-4C96-ABB8-F080118D689A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90F14633-8AA5-4C96-ABB8-F080118D689A}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{90F14633-8AA5-4C96-ABB8-F080118D689A}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{90F14633-8AA5-4C96-ABB8-F080118D689A}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{90F14633-8AA5-4C96-ABB8-F080118D689A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{90F14633-8AA5-4C96-ABB8-F080118D689A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90F14633-8AA5-4C96-ABB8-F080118D689A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90F14633-8AA5-4C96-ABB8-F080118D689A}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{90F14633-8AA5-4C96-ABB8-F080118D689A}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{90F14633-8AA5-4C96-ABB8-F080118D689A}.Release|x64.ActiveCfg = Release|Any CPU
+		{90F14633-8AA5-4C96-ABB8-F080118D689A}.Release|x86.ActiveCfg = Release|Any CPU
+		{DC28FFBE-4A31-445D-AA60-9020C0726092}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{DC28FFBE-4A31-445D-AA60-9020C0726092}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{DC28FFBE-4A31-445D-AA60-9020C0726092}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{DC28FFBE-4A31-445D-AA60-9020C0726092}.Debug|x64.ActiveCfg = Debug|x86
+		{DC28FFBE-4A31-445D-AA60-9020C0726092}.Debug|x86.ActiveCfg = Debug|x86
+		{DC28FFBE-4A31-445D-AA60-9020C0726092}.Debug|x86.Build.0 = Debug|x86
+		{DC28FFBE-4A31-445D-AA60-9020C0726092}.Release|Any CPU.ActiveCfg = Release|x86
+		{DC28FFBE-4A31-445D-AA60-9020C0726092}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{DC28FFBE-4A31-445D-AA60-9020C0726092}.Release|Mixed Platforms.Build.0 = Release|x86
+		{DC28FFBE-4A31-445D-AA60-9020C0726092}.Release|x64.ActiveCfg = Release|x86
+		{DC28FFBE-4A31-445D-AA60-9020C0726092}.Release|x86.ActiveCfg = Release|x86
+		{DC28FFBE-4A31-445D-AA60-9020C0726092}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
